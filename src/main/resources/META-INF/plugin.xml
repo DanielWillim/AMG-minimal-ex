@@ -1,0 +1,30 @@
+<idea-plugin>
+    <id>com.centiro.convergence.AutomaticMapperGenerator</id>
+    <name>AutomaticMapperGenerator</name>
+    <vendor email="daniel.willim@centiro.com" url="TODO.TODO">Centiro</vendor>
+
+    <description><![CDATA[
+        TODO
+        This is a placeholder text that is long enough that you won't complain
+    ]]></description>
+
+    <!-- Product and plugin compatibility requirements -->
+    <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.java</depends>
+    <depends>org.jetbrains.kotlin</depends>
+
+
+    <extensions defaultExtensionNs="com.intellij">
+        <notificationGroup id="AutomaticMapperGenerator Sticky" displayType="STICKY_BALLOON" isLogByDefault="true" order="first"/>
+        <notificationGroup id="AutomaticMapperGenerator" displayType="BALLOON" isLogByDefault="true"/>
+    </extensions>
+
+    <actions>
+        <action id="com.centiro.convergence.amg.MapperAction"
+                class="com.centiro.convergence.amg.MapperAction"
+                text="Generate Mapper from JSON"
+                description="Will generate stuff TODO">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
+</idea-plugin>
