@@ -8,7 +8,6 @@ class MapperAction : AnAction() {
     override fun actionPerformed(event: AnActionEvent) {
         val project = event.project
 
-        Messages.showMessageDialog(project, "Hello from Kotlin again!", "Greeting", Messages.getInformationIcon())
-        Messages.showMessageDialog(project, "Hello from Kotlin again!", "Greeting", Messages.getInformationIcon())
+        Messages.showMessageDialog(project, "Hello from Kotlin!", "Greeting", Messages.getInformationIcon())
     }
 }

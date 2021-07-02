@@ -1,6 +1,6 @@
 <idea-plugin>
-    <id>com.centiro.convergence.AutomaticMapperGenerator</id>
-    <name>AutomaticMapperGenerator</name>
+    <id>com.centiro.convergence.AutomaticMapperGeneratorMini</id>
+    <name>AutomaticMapperGenerator Mini Ex</name>
     <vendor email="daniel.willim@centiro.com" url="TODO.TODO">Centiro</vendor>
 
     <description><![CDATA[
