@@ -1,7 +1,7 @@
 <idea-plugin>
-    <id>com.centiro.convergence.AutomaticMapperGeneratorMini</id>
-    <name>AutomaticMapperGenerator Mini Ex</name>
-    <vendor email="daniel.willim@centiro.com" url="TODO.TODO">Centiro</vendor>
+    <id>com.centiro.convergence.AutomaticMapperGenerator</id>
+    <name>AutomaticMapperGenerator</name>
+    <vendor email="daniel.willim@centiro.com" url="centiro.se">Centiro</vendor>
 
     <description><![CDATA[
         TODO
@@ -10,12 +10,14 @@
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
-    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.modules.platform</depends>
     <depends>org.jetbrains.kotlin</depends>
+    <depends>com.intellij.modules.java</depends>
 
 
     <extensions defaultExtensionNs="com.intellij">
-        <notificationGroup id="AutomaticMapperGenerator Sticky" displayType="STICKY_BALLOON" isLogByDefault="true" order="first"/>
+        <notificationGroup id="AutomaticMapperGenerator Sticky" displayType="STICKY_BALLOON" isLogByDefault="true"
+                           order="first"/>
         <notificationGroup id="AutomaticMapperGenerator" displayType="BALLOON" isLogByDefault="true"/>
     </extensions>
 

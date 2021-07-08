@@ -1,14 +1,13 @@
 import org.jetbrains.changelog.markdownToHTML
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-
 fun properties(key: String) = project.findProperty(key).toString()
 
 plugins {
     // Java support
     id("java")
     // Kotlin support
-    id("org.jetbrains.kotlin.jvm") version "1.4.10"
+    id("org.jetbrains.kotlin.jvm") version "1.4.32"
     // gradle-intellij-plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
     id("org.jetbrains.intellij") version "1.1.2"
     // gradle-changelog-plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
@@ -19,6 +18,8 @@ plugins {
 
 group = properties("pluginGroup")
 version = properties("pluginVersion")
+
+
 
 // Configure project's dependencies
 repositories {
@@ -38,13 +39,19 @@ intellij {
     plugins.set(properties("platformPlugins").split(',').map(String::trim).filter(String::isNotEmpty))
 }
 
+dependencies {
+    //testImplementation("junit:junit:5.7.2")
+    testImplementation("junit:junit:4.13.2")
+    //testImplementation(platform("org.junit:junit-bom:4.13.2"))
+    //testImplementation("org.junit.jupiter:junit-jupiter")
+}
+
 // Configure gradle-changelog-plugin plugin.
 // Read more: https://github.com/JetBrains/gradle-changelog-plugin
 changelog {
     version = properties("pluginVersion")
     groups = emptyList()
 }
-
 
 tasks {
     // Set the compatibility versions to 11
@@ -98,5 +105,16 @@ tasks {
 //            "--illegal-access=permit"
 //        )
         autoReloadPlugins.set(true)
+    }
+
+    test {
+        useJUnit()
+        //systemProperty("idea.home.path", "C:\\Program Files\\JetBrains\\IntelliJ IDEA Community Edition 2021.1.1") TODO
+    }
+
+    buildSearchableOptions {
+        // At the moment there are no settings hooking into Intellij, hence to need to search for them
+        // This also gives super fast build speeds :O
+        enabled = false
     }
 }

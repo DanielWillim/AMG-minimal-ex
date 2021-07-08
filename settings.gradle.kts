@@ -1,1 +1,1 @@
-rootProject.name = "AutomaticMapperGenerator Mini"
+rootProject.name = "AutomaticMapperGenerator"

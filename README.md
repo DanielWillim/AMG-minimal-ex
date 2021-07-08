@@ -12,3 +12,6 @@ in the location specified by `util.Settings.kt`.
 4. Run tool through `Tools -> Generate Mapper from JSON`
 
 # Build and Test
+
+## Please note
+* If building and testing for Intellij-platform version 2020.* an older version of the kotlin plugin will be used. This version has known memory leek issues that the compiler will warn for when building the plugin. Change targeted version in `gradle.properties`
